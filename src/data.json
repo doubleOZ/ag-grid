@@ -1,0 +1,44 @@
+[
+  {
+    "name": "John Smith",
+    "gender": "Male",
+    "country": "United States",
+    "age": 35,
+    "salary": 38000
+  },
+  {
+    "name": "Emma Johnson",
+    "gender": "Female",
+    "country": "Canada",
+    "age": 28,
+    "salary": 42000
+  },
+  {
+    "name": "Juan Garcia",
+    "gender": "Female",
+    "country": "Spain",
+    "age": 42,
+    "salary": 24000
+  },
+  {
+    "name": "Sophie Martin",
+    "gender": "Female",
+    "country": "France",
+    "age": 31,
+    "salary": 30000
+  },
+  {
+    "name": "Kenta Yamamoto",
+    "gender": "Male",
+    "country": "Japan",
+    "age": 24,
+    "salary": 35000
+  },
+  {
+    "name": "Emily Smith",
+    "gender": "Female",
+    "country": "United States",
+    "age": 28,
+    "salary": 25000
+  }
+]
