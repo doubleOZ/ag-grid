@@ -97,3 +97,11 @@ export const countries: Country[] = [
     shortValue: "US",
   },
 ];
+
+export const genderIcons = {
+  [Gender.Male]:
+    "https://static.vecteezy.com/system/resources/previews/017/178/570/original/male-symbol-isolated-icon-on-transparent-background-free-png.png",
+  [Gender.Female]:
+    "https://icons.iconarchive.com/icons/custom-icon-design/flatastic-7/512/Female-icon.png",
+  [Gender.LGBTQIA]: "https://cdn-icons-png.flaticon.com/512/6421/6421208.png",
+};
