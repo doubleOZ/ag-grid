@@ -1,18 +1,21 @@
 import React, { useState } from "react";
 import "./App.css";
-import data from "./data.json";
 import { Space } from "antd";
+import "ag-grid-community/styles/ag-grid.css";
+import "ag-grid-community/styles/ag-theme-quartz.css";
+import "ag-grid-enterprise";
+import AssignmentTable from "./AssignmentTable";
+import CRUDForm from "./CRUDForm";
 
 function App() {
-  const [rowData] = useState(data);
-
   return (
-    <Space
-      direction="horizontal"
-      style={{ width: "100%", justifyContent: "center" }}
-    >
-      CODE HERE
-    </Space>
+    <div className="centered">
+      <Space direction="vertical">
+        <CRUDForm />
+
+        <AssignmentTable />
+      </Space>
+    </div>
   );
 }
 
