@@ -2677,30 +2677,24 @@ adjust-sourcemap-loader@^4.0.0:
     loader-utils "^2.0.0"
     regex-parser "^2.2.11"
 
-ag-charts-community@9.2.0:
-  version "9.2.0"
-  resolved "https://registry.yarnpkg.com/ag-charts-community/-/ag-charts-community-9.2.0.tgz#7c4a1af655f4e76b0793e6cc690b4713bd68513c"
-  integrity sha512-dS5nPExh81owIIdyHli0TvWvSyhmZy2RncM/s3/KXpjAf3eiVN2fxfT2z+QxqsLyoms+fernp5cAuSju0peYXw==
+ag-grid-community@31.0.3, ag-grid-community@~31.0.3:
+  version "31.0.3"
+  resolved "https://registry.yarnpkg.com/ag-grid-community/-/ag-grid-community-31.0.3.tgz#80870881a3be03aa5df890b4a70409ef5d781e7f"
+  integrity sha512-k81YmLaOQOab9BavYD+Pw2smZSl6TXOJqj9hRuf70XQl3EknOHCGcra7joJxZRJLMKE/HdR+u33TNyX4TCuWfg==
 
-ag-grid-community@31.2.0, ag-grid-community@^31.0.1:
-  version "31.2.0"
-  resolved "https://registry.yarnpkg.com/ag-grid-community/-/ag-grid-community-31.2.0.tgz#376f07a3a7dd5c87d8cb6f660e4e338ec70663d1"
-  integrity sha512-Ija6X171Iq3mFZASZlriQIIdEFqA71rZIsjQD6KHy5lMmxnoseZTX2neThBav1gvr6SA6n5B2PD6eUHdZnrUfw==
-
-ag-grid-enterprise@^31.0.1:
-  version "31.2.0"
-  resolved "https://registry.yarnpkg.com/ag-grid-enterprise/-/ag-grid-enterprise-31.2.0.tgz#3c5021bb83458408b5ee2144ebb9d7067917a367"
-  integrity sha512-qCAtLA3naAMCzhvJkUvRVAc+Lscy5qNGxLNCBAcLSd47YejtpHPEsRZK/WcrJma9k2YImn7372IXixRPOZBL2w==
+ag-grid-enterprise@31.0.3:
+  version "31.0.3"
+  resolved "https://registry.yarnpkg.com/ag-grid-enterprise/-/ag-grid-enterprise-31.0.3.tgz#1befd5fbad482bd615fdd8e33e1e3f1e8296c78a"
+  integrity sha512-nhbYCqZ9XalyWBelY2YgJcqI/k3VQwjQPcoArbSSDHPM28vgpp7s43/KoOs1lvIHkbpBT5xyxsNo4nRE4uttGw==
   dependencies:
-    ag-charts-community "9.2.0"
-    ag-grid-community "31.2.0"
+    ag-grid-community "~31.0.3"
 
-ag-grid-react@^31.0.1:
-  version "31.2.0"
-  resolved "https://registry.yarnpkg.com/ag-grid-react/-/ag-grid-react-31.2.0.tgz#c3e90edd4ccac3fbb113b657ad6192bc2d85e314"
-  integrity sha512-ObFdPmF3EC7/xWZX8NjrZjURePyFa72MWjb1ZgUqDP7Wq09OSXXyKBN1qXmfUIT3h4o5+os6tCQEqoo7Op+3ZA==
+ag-grid-react@31.0.3:
+  version "31.0.3"
+  resolved "https://registry.yarnpkg.com/ag-grid-react/-/ag-grid-react-31.0.3.tgz#4f9634129f37bd59de34529d62dff158115ca225"
+  integrity sha512-CE4Z5Rdb0H3MFBhmge9854AyDvI4DoG7ZoUJRFB1p2pu5ANVe6tv7cwEI/ugHemEXRRP6s5uvW+ndv0Q6x1/+Q==
   dependencies:
-    ag-grid-community "31.2.0"
+    ag-grid-community "~31.0.3"
     prop-types "^15.8.1"
 
 agent-base@6:
