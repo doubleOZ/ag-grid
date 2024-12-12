@@ -9,9 +9,7 @@ import React, { useCallback, useEffect, useState } from "react";
 
 interface AssignmentTableProps {
   onRowSelected?: (selectedRow: any) => void;
-  // rowData: Info[];
   searchTerm: string;
-  // setRowData?: React.Dispatch<React.SetStateAction<Info[]>>;
 }
 
 const AssignmentTable: React.FC<AssignmentTableProps> = ({onRowSelected, searchTerm}) => {
@@ -124,18 +122,6 @@ const AssignmentTable: React.FC<AssignmentTableProps> = ({onRowSelected, searchT
       onRowSelected?.(selectedRows[0]);
     }
   };
-
-//   const [filteredRowData, setFilteredRowData] = useState<Info[]>(rawData);
-
-// useEffect(() => {
-//   const lowercasedSearchTerm = searchTerm.toLowerCase();
-//   const filteredData = rowData.filter((row) => 
-//     Object.values(row || {}).some((value) =>
-//       (value?.toString() || "").toLowerCase().includes(lowercasedSearchTerm)
-//     )
-//   );
-//   setFilteredRowData(filteredData);
-// }, [searchTerm, rowData]);
 
   return (
     <div className="ag-theme-quartz-dark" style={{ height: 450, width: 1000 }}>

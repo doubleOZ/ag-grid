@@ -111,23 +111,6 @@ const CRUDForm: FC<ICRUDForm> = ({ initialData, onSearch }) => {
     message.success('Record removed successfully');
   };
 
-  // Handle row selection
-  const onSelectionChanged = useCallback(() => {
-    const selectedRows = gridRef.current?.api.getSelectedRows();
-    if (selectedRows && selectedRows.length > 0) {
-      // Populate form with selected row data
-      const selected = selectedRows[0];
-      setFormData({
-        firstName: selected.firstName,
-        lastName: selected.lastName,
-        gender: selected.gender,
-        country: selected.country,
-        age: selected.age,
-        salary: selected.salary
-      });
-    }
-  }, []);
-
   return (
     <Space direction="vertical">
       <Space>
