@@ -4,17 +4,19 @@ import "ag-grid-community/styles/ag-theme-quartz.css";
 import "ag-grid-enterprise";
 import { Info } from "./type";
 import { rawData } from "./data";
-import { ColDef, ValueGetterParams } from "ag-grid-community";
-import React, { useEffect, useState } from "react";
+import { ColDef, GridReadyEvent, ValueGetterParams } from "ag-grid-community";
+import React, { useCallback, useEffect, useState } from "react";
 
 interface AssignmentTableProps {
   onRowSelected?: (selectedRow: any) => void;
-  rowData: Info[];
+  // rowData: Info[];
   searchTerm: string;
+  // setRowData?: React.Dispatch<React.SetStateAction<Info[]>>;
 }
 
-const AssignmentTable: React.FC<AssignmentTableProps> = ({onRowSelected, rowData, searchTerm}) => {
+const AssignmentTable: React.FC<AssignmentTableProps> = ({onRowSelected, searchTerm}) => {
 
+  const [rowData] = useState<Info[]>(rawData);
   const countryAbbreviations: { [key: string]: string} = {
     'United States': 'US',
     'Canada': 'CAN',
@@ -102,9 +104,18 @@ const AssignmentTable: React.FC<AssignmentTableProps> = ({onRowSelected, rowData
     enableValue: true,
   });
 
-  const onGridReady = (params: any) => {
+  const [gridApi, setGridApi] = useState<any>(null);
+
+  const onGridReady = useCallback((params: GridReadyEvent) => {
+    setGridApi(params.api);
     params.api.sizeColumnsToFit();  // Auto-size columns to fit the available width
-  };
+  },[]);
+
+  useEffect(() => {
+    if (gridApi) {
+      gridApi.setQuickFilter(searchTerm);
+    }
+  }, [searchTerm, gridApi]);
 
   const onSelectionChanged = (event: any) => {
     const selectedRows = event.api.getSelectedRows();
@@ -114,22 +125,32 @@ const AssignmentTable: React.FC<AssignmentTableProps> = ({onRowSelected, rowData
     }
   };
 
-  const [filteredRowData, setFilteredRowData] = useState<Info[]>(rowData);
+//   const [filteredRowData, setFilteredRowData] = useState<Info[]>(rawData);
 
-useEffect(() => {
-  const lowercasedSearchTerm = searchTerm.toLowerCase();
-  const filteredData = rowData.filter((row) => 
-    Object.values(row).some((value) =>
-      value.toString().toLowerCase().includes(lowercasedSearchTerm)
-    )
-  );
-  setFilteredRowData(filteredData);
-}, [searchTerm, rowData]);
+// useEffect(() => {
+//   const lowercasedSearchTerm = searchTerm.toLowerCase();
+//   const filteredData = rowData.filter((row) => 
+//     Object.values(row || {}).some((value) =>
+//       (value?.toString() || "").toLowerCase().includes(lowercasedSearchTerm)
+//     )
+//   );
+//   setFilteredRowData(filteredData);
+// }, [searchTerm, rowData]);
 
   return (
     <div className="ag-theme-quartz-dark" style={{ height: 450, width: 1000 }}>
-      <AgGridReact<Info> defaultColDef={defaultColDef} suppressDragLeaveHidesColumns={true} rowData={rawData} rowGroupPanelShow="always" columnDefs={colDefs} animateRows={true} pagination={true}
-         domLayout="autoHeight" onGridReady={onGridReady} rowSelection="single" onSelectionChanged={onSelectionChanged} />
+      <AgGridReact<Info> 
+      defaultColDef={defaultColDef} 
+      suppressDragLeaveHidesColumns={true} 
+      rowData={rowData} 
+      rowGroupPanelShow="always" 
+      columnDefs={colDefs} 
+      animateRows={true} 
+      pagination={true}
+      domLayout="autoHeight" 
+      onGridReady={onGridReady} 
+      rowSelection="single" 
+      onSelectionChanged={onSelectionChanged} />
     </div>
   );
 };

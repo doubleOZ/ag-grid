@@ -180,7 +180,7 @@ const CRUDForm: FC<ICRUDForm> = ({ initialData, onSearch }) => {
         />
 
         <Button type="primary" onClick={handleAdd}>Add</Button>
-        <Button type="primary" onClick={handleAdd}>Update Selected</Button>
+        <Button type="primary" onClick={handleUpdate}>Update Selected</Button>
         <Button type="primary" danger onClick={handleRemove}>
           Remove Selected
         </Button>

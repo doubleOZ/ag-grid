@@ -7,18 +7,9 @@ import "ag-grid-enterprise";
 import AssignmentTable from "./AssignmentTable";
 import CRUDForm from "./CRUDForm";
 import { Info, Gender } from "./type";
+import { rawData } from "./data";
 
 function App() {
-  const [rowData, setRowData] = useState<Info[]>([
-    {
-      firstName:'John',
-      lastName: 'Doe',
-      gender: Gender.Male,
-      country: 'USA',
-      age: 30,
-      salary: 50000
-    }
-  ]);
 
   const [selectedRow, setSelectedRow] = useState<Info | null>(null);
   const [searchTerm, setSearchTerm] = useState("");
@@ -32,7 +23,7 @@ function App() {
       <Space direction="vertical">
         <CRUDForm initialData={selectedRow || undefined} onSearch={(term) => setSearchTerm(term)} />
 
-        <AssignmentTable rowData={rowData} onRowSelected={handleRowSelected} searchTerm={searchTerm} />
+        <AssignmentTable onRowSelected={handleRowSelected} searchTerm={searchTerm} />
       </Space>
     </div>
   );
